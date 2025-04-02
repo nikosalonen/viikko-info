@@ -1,23 +1,24 @@
 <!-- @format -->
 
 <script setup lang="ts">
-import { DateTime } from "luxon";
 import Footer from "./components/Footer.vue";
 import HelloWorld from "./components/HelloWorld.vue";
+import { useDate } from "./composables/useDate";
 
-const date = DateTime.local().toFormat("dd.MM.yyyy");
+const { getCurrentDateInfo } = useDate();
+const { formattedDate } = getCurrentDateInfo();
 const msg = "Nyt on viikko";
 </script>
 
 <template>
   <div class="sky">
-    <div class="sun"></div>
-    <div class="cloud cloud1"></div>
-    <div class="cloud cloud2"></div>
-    <div class="cloud cloud3"></div>
-    <div class="cloud cloud4"></div>
-    <div class="cloud cloud5"></div>
-    <div class="cloud cloud6"></div>
+    <div class="sun" role="img" aria-label="Aurinko"></div>
+    <div class="cloud cloud1" role="img" aria-label="Pilvi"></div>
+    <div class="cloud cloud2" role="img" aria-label="Pilvi"></div>
+    <div class="cloud cloud3" role="img" aria-label="Pilvi"></div>
+    <div class="cloud cloud4" role="img" aria-label="Pilvi"></div>
+    <div class="cloud cloud5" role="img" aria-label="Pilvi"></div>
+    <div class="cloud cloud6" role="img" aria-label="Pilvi"></div>
     <div class="app-container">
       <div class="main-content">
         <HelloWorld :msg="msg" />
@@ -33,6 +34,10 @@ const msg = "Nyt on viikko";
   --secondary-color: #ffffff;
   --text-color: #ffffff;
   --background-color: #f8f9fa;
+  --sun-color: #FFD700;
+  --sun-glow: #FFA500;
+  --sky-gradient-start: #87CEEB;
+  --sky-gradient-end: #4A90E2;
 }
 
 body {
@@ -50,7 +55,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, #87CEEB, #4A90E2);
+  background: linear-gradient(to bottom, var(--sky-gradient-start), var(--sky-gradient-end));
   z-index: -1;
 }
 
@@ -60,9 +65,9 @@ body {
   right: 50px;
   width: 100px;
   height: 100px;
-  background: #FFD700;
+  background: var(--sun-color);
   border-radius: 50%;
-  box-shadow: 0 0 50px #FFD700, 0 0 100px #FFA500;
+  box-shadow: 0 0 50px var(--sun-color), 0 0 100px var(--sun-glow);
   animation: glow 3s ease-in-out infinite alternate;
 }
 
@@ -196,10 +201,10 @@ body {
 
 @keyframes glow {
   from {
-    box-shadow: 0 0 50px #FFD700, 0 0 100px #FFA500;
+    box-shadow: 0 0 50px var(--sun-color), 0 0 100px var(--sun-glow);
   }
   to {
-    box-shadow: 0 0 70px #FFD700, 0 0 140px #FFA500;
+    box-shadow: 0 0 70px var(--sun-color), 0 0 140px var(--sun-glow);
   }
 }
 
@@ -218,5 +223,14 @@ body {
   justify-content: center;
   padding: 2rem;
   padding-bottom: 4rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sun,
+  .cloud,
+  .cloud::before,
+  .cloud::after {
+    animation: none;
+  }
 }
 </style>

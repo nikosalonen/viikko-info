@@ -1,17 +1,23 @@
 <!-- @format -->
 
 <script setup lang="ts">
-import { DateTime } from "luxon";
-defineProps<{ msg: string }>();
-const week = DateTime.local().weekNumber;
+import { useDate } from "../composables/useDate";
+
+interface Props {
+  msg: string;
+}
+
+defineProps<Props>();
+const { getCurrentDateInfo } = useDate();
+const { weekNumber } = getCurrentDateInfo();
 </script>
 
 <template>
   <div class="header">
     <h1>{{ msg }}</h1>
   </div>
-  <div class="week">
-    <p>{{ week }}</p>
+  <div class="week" role="region" aria-label="Viikkonumero">
+    <p>{{ weekNumber }}</p>
   </div>
 </template>
 
@@ -65,6 +71,12 @@ const week = DateTime.local().weekNumber;
 
   .week p {
     font-size: 8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .week p {
+    animation: none;
   }
 }
 </style>
