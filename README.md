@@ -1,18 +1,112 @@
-# Vue 3 + TypeScript + Vite
+# Mikä viikko nyt on?
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A simple, beautiful web application that shows the current week number. Built with Vue 3, TypeScript, and Vite.
 
-## Recommended IDE Setup
+## Features
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- 🎨 Beautiful animated sky background with clouds and sun
+- 📱 Fully responsive design
+- ♿ Accessibility features including ARIA labels and reduced motion support
+- 🌙 Dark mode support
+- ⚡ Fast and lightweight
+- 🔒 Security best practices
+- 📱 PWA ready
 
-## Type Support For `.vue` Imports in TS
+## Tech Stack
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+- Vue 3
+- TypeScript
+- Vite
+- Luxon (for date handling)
+- CSS3 (with animations and variables)
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+## Prerequisites
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+- Node.js (v16 or higher)
+- npm or yarn
+
+## Getting Started
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/viikko-info.git
+cd viikko-info
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Start the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+4. Build for production:
+
+```bash
+npm run build
+# or
+yarn build
+```
+
+## Project Structure
+
+```
+viikko-info/
+├── src/
+│   ├── assets/        # Static assets
+│   ├── components/    # Vue components
+│   ├── composables/   # Reusable composables
+│   └── App.vue        # Root component
+├── public/            # Public assets
+└── index.html         # Entry HTML file
+```
+
+## Features in Detail
+
+### Accessibility
+
+- ARIA labels for all interactive elements
+- Support for reduced motion preferences
+- Semantic HTML structure
+- High contrast text
+
+### Performance
+
+- Optimized animations
+- CSS variables for maintainability
+- Efficient date calculations
+- Responsive design
+
+### Security
+
+- Content Security Policy
+- Strict referrer policy
+- No external dependencies except for essential ones
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- [Vue.js](https://vuejs.org/)
+- [Vite](https://vitejs.dev/)
+- [Luxon](https://moment.github.io/luxon/)
