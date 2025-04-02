@@ -5,9 +5,7 @@ A simple, beautiful web application that shows the current week number. Built wi
 ## Features
 
 - 🎨 Beautiful animated sky background with clouds and sun
-- 📱 Fully responsive design
 - ♿ Accessibility features including ARIA labels and reduced motion support
-- 🌙 Dark mode support
 - ⚡ Fast and lightweight
 - 🔒 Security best practices
 - 📱 PWA ready
