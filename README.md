@@ -28,7 +28,7 @@ A simple, beautiful web application that shows the current week number. Built wi
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/viikko-info.git
+git clone https://github.com/nikosalonen/viikko-info.git
 cd viikko-info
 ```
 
