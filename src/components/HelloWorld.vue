@@ -8,29 +8,63 @@ const week = DateTime.local().weekNumber;
 
 <template>
   <div class="header">
-
     <h1>{{ msg }}</h1>
   </div>
   <div class="week">
-
-    <p >{{ week }}</p>
+    <p>{{ week }}</p>
   </div>
 </template>
 
 <style scoped>
-.header{
- flex: 0 0 auto;
-
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
 }
-.week {
-  flex: 1 0 auto;
-  font-size: 20em;
 
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  letter-spacing: -0.5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.week {
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 .week p {
   margin: 0;
   padding: 0;
+  font-size: 12rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.5s ease-out;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .week p {
+    font-size: 8rem;
+  }
+}
 </style>
